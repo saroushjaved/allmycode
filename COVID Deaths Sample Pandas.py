@@ -61,3 +61,7 @@ print(copy_final)
 #Saving the file
 
 copy_final.to_csv(r'/home/soroush/Downloads/covid-data.csv')
+
+conties =  census_df[census_df['SUMLEV'] == 50]
+    answer = conties[((conties['REGION']==1)|(conties['REGION']==2))&(conties['CTYNAME']=='Washington County')&(conties['POPESTIMATE2015']>conties['POPESTIMATE2014'])][['STNAME','CTYNAME']]
+    return answer
